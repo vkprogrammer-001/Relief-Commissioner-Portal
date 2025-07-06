@@ -1,0 +1,281 @@
+/* Header styles */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fcfdff;
+    padding: 10px 70px;
+    box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fcfdff;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    color: #ffffff;
+    padding: 15px;
+    margin: 0 20px;
+    border-radius: 14px;
+    text-shadow: #020817 0px 0px 2px;
+    background: linear-gradient(to right, #2c5fea, #8c34ea);
+}
+
+.logo-dot {
+  position: absolute;
+  top: -3px;
+  right: -9px;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.header-title{
+    color: #333;
+}
+
+.header-left{
+    display: flex;
+    
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+    
+}
+
+.district-online{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 24px;
+    background-color: #d7fae6;
+    margin-right: 20px;
+}
+
+button{
+    background-color: #ffffff;
+    color: #020817;
+    border: none;
+    padding: 10px 20px;
+    border: #e1e8f0 2px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+button:hover {
+    background-color: #f0f6ff;
+}
+
+.blinking-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  margin: 0px 5px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Navbar styles */
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.2);
+    background-color: #fefefe;
+    margin: 106px 100px 40px;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li {
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 8px 50px;
+    display: flex;
+    align-items: center;
+    color:#65768c;
+    transition: background-color 0.3s ease;
+}
+
+.nav-items li.active {
+    color: #ffffff;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.dashboard-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.dashboard-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 269px;
+    height: 215px;
+}
+
+.card-icon {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.card-icon .first-icon{
+    height: 50px;
+    width:50px;
+    padding:12px;
+    border-radius:12px;
+    color:#ffffff;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.dashboard-card:hover {
+    position: relative;
+    transform: translateY(-5px);
+    transition: ease-in-out 0.3s;
+    box-shadow: 0 6px 15px -1px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.recent-activity-card {
+    background-color: #fdfdfe;
+    border-radius: 12px;
+    box-shadow: 0px 11px 35px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 48.9%;
+}
+
+.activity-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+    background: #f4f6fa;
+    border-radius: 10px;
+}
+
+.activity-item:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.activity-heading {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    align-items: center;
+}
+
+.activity-Info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.activity-tag {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 12px;
+}
+
+.top-districts{
+    background: #fdfefe;
+    border-radius: 12px;
+    box-shadow: 0px 11px 35px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 48.9%;
+}
+
+.district-card {
+    padding: 10px;
+    display: block;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.district-info-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.district-info-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.system-alert-card {
+    border-radius: 12px;
+    box-shadow: 0px 11px 35px rgba(0, 0, 0, 0.2);
+    background: #f9f3e7;
+    padding: 15px;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.alert-list {
+    display: flex;
+    flex-direction: column;
+    background: #fffbf7;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+

@@ -1,0 +1,8 @@
+:root{
+    --gradient-bg-first: linear-gradient(to right, #4080f6, #5f68f1);
+    --gradient-bg-second: linear-gradient(to right, #12b984, #12b9a1);
+    --gradient-bg-third: linear-gradient(to right, #3686f3, #0eb2d7);
+    --gradient-bg-fourth: linear-gradient(to right, #ad54f1, #e549a2);
+    --gradient-bg-fifth: linear-gradient(to right, #f86f1a, #f04642);
+    --gradient-bg-sixth: linear-gradient(to right, #6965f2, #a755f6);
+}
