@@ -1,7 +1,23 @@
-import { CustomHeading1 } from "../utility/CustomUi";
+import DistributionTracking from "../components/DistributionTracking.js";
+import RecordDistribution from "../components/RecordDistribution.js";
+import { CustomHeading1, TabBar } from "../utility/CustomUi";
 import { icons } from "../utility/icons.js";
 
 const LifeJackets = () => {
+  const tabs = [
+    {
+      id: "Record Distribution",
+      icon: icons.IoCameraOutline(),
+      content: <RecordDistribution />,
+
+    },
+    {
+      id: "Distribution Tracking",
+      icon: icons.FiArrowUpRight(),
+      content: <DistributionTracking />,
+    },
+  ];
+
   return (
     <div>
       <CustomHeading1
@@ -20,6 +36,7 @@ const LifeJackets = () => {
         bg={"var(--gradient-bg-fifth)"}
         textColor={"linear-gradient(to right, #ea580e, #dc2625)"}
       />
+      <TabBar tabs={tabs} color={"#ea580b"} />
     </div>
   );
 };
