@@ -132,6 +132,7 @@ button:hover {
     align-items: center;
 }
 
+/* Dashboard */
 .dashboard-title {
     display: flex;
     align-items: center;
@@ -140,6 +141,7 @@ button:hover {
 
 .dashboard-card-container {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     gap: 40px;
     margin: 40px 0;
@@ -151,6 +153,8 @@ button:hover {
     padding: 20px;
     width: 269px;
     height: 215px;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
 }
 
 .card-icon {
@@ -175,9 +179,7 @@ button:hover {
 }
 
 .dashboard-card:hover {
-    position: relative;
     transform: translateY(-5px);
-    transition: ease-in-out 0.3s;
     box-shadow: 0 6px 15px -1px rgba(0, 0, 0, 0.3);
 }
 
