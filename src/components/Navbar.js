@@ -1,8 +1,8 @@
-import { useState, useEffect, useMemo } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { icons } from "../utility/icons.js"; // Importing icon components
-import  '../utility/icons.js'; // Potentially for side effects or global icon registration
+import { useEffect, useMemo, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/theme.css'; // Styling for the navbar and theme variables
+import '../utils/icons.js'; // Potentially for side effects or global icon registration
+import { icons } from "../utils/icons.js"; // Importing icon components
 
 const Navbar = () => {
     // useMemo for menuItems: Ensures this array is only created once

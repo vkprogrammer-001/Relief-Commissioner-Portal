@@ -1,9 +1,11 @@
-import DashboardCard from "../components/DashboardCard";
-import RecentActivityCard from "../components/RecentActivityCard";
-import TopDistrictsCard from "../components/TopDistrictsCard";
-import SystemAlertCard from "../components/SystemAlertCard";
-import { CustomHeading1 } from "../utility/CustomUi";
-import { icons } from "../utility/icons.js";
+import {
+  DashboardCard,
+  RecentActivityCard,
+  SystemAlertCard,
+  TopDistrictsCard,
+} from "../components/index.js";
+import { CustomHeading1 } from "../utils/CustomUi.js";
+import { icons } from "../utils/icons.js";
 
 const Dashboard = () => {
   return (

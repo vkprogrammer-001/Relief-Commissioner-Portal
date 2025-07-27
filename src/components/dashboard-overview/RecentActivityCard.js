@@ -1,6 +1,6 @@
-import { CustomHeading2, CustomHeading3 } from "../utility/CustomUi";
-import { icons } from "../utility/icons.js";
-import "../styles/component-styles.css";
+import "../../styles/component-styles.css";
+import { CustomHeading2, CustomHeading3, Tag } from "../../utils/CustomUi.js";
+import { icons } from "../../utils/icons.js";
 
 const RecentActivityCard = () => {
   const menu = [
@@ -59,21 +59,8 @@ const RecentActivityCard = () => {
             />
           </div>
           <div className="activity-Info">
-            <div
-              className="activity-tag"
-              style={{
-
-                color: item.tag === "completed" ? "#166434" : "#854d0f",
-                background: item.tag === "completed" ? "#dcfce7" : "#fef9c3",
-                border:
-                  item.tag === "completed"
-                    ? "1px solid #bbf7d0"
-                    : "1px solid #ffef8a",
-              }}
-            >
-              {item.tag}
-            </div>
-            <p style={{ fontSize: "10px", color: "#475569" }}>{item.time}</p>
+            <Tag tagName={item.tag} />
+            <p style={{ color: "#475569" }}>{item.time}</p>
           </div>
         </div>
       ))}

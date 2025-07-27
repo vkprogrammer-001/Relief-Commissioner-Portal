@@ -1,4 +1,4 @@
-import { icons } from "../utility/icons.js";
+import { icons } from "../../utils/icons.js";
 
 const DashboardCard = () => {
   const cardMenu = [
@@ -82,14 +82,14 @@ const DashboardCard = () => {
             </span>
           </div>
           <div className="card-content">
-            <h3 className="card-title" style={{ color: item.textColor,}}>
+            <h5 className="card-title" style={{ color: item.textColor,fontSize: "var(--text-sm)" }}>
               {item.title}
-            </h3>
+            </h5>
             <p
               className="card-value"
               style={{
                 color: item.textColor,
-                fontSize: "28px",
+                fontSize: "var(--text-3xl)",
                 fontWeight: "bold",
                 paddingTop: "10px",
               }}
@@ -98,7 +98,7 @@ const DashboardCard = () => {
             </p>
             <p
               className="hike-value"
-              style={{ paddingTop: "10px", color: "#17a34a",  }}
+              style={{ paddingTop: "10px", color: "#17a34a", fontSize: "var(--text-sm)" }}
             >
               <icons.FiArrowUpRight />
               {item.hikeValue + " from last month"}

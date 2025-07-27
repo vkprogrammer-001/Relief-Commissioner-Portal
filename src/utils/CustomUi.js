@@ -27,7 +27,7 @@ const CustomHeading1 = ({
         </div>
         <h2
           style={{
-            fontSize: "2.5rem",
+            fontSize: "var(--text-4xl)",
             paddingLeft: "10px",
             background: textColor,
             WebkitBackgroundClip: "text",
@@ -37,16 +37,17 @@ const CustomHeading1 = ({
           {title}
         </h2>
       </div>
-      <h4
+      <h3
         style={{
-          fontWeight: "500",
+          fontSize: "var(--text-lg)",
+          fontWeight: "var(--font-medium)",
           color: "#65768c",
           margin: "20px 0",
           textAlign: "center",
         }}
       >
         {subtitle}
-      </h4>
+      </h3>
     </div>
   );
 };
@@ -61,29 +62,35 @@ const CustomHeading2 = ({
 }) => {
   return (
     <div className="custom-heading">
-      <div
-        style={{
-          height: "40px",
-          width: "40px",
-          padding: "10px",
-          borderRadius: "10px",
-          background: bg,
-          color: iconColor ? iconColor : "#fff",
-        }}
-      >
-        {icon}
-      </div>
+      {icon && (
+        <div
+          style={{
+            height: "40px",
+            width: "40px",
+            padding: "10px",
+            borderRadius: "10px",
+            background: bg,
+            color: iconColor ? iconColor : "#fff",
+          }}
+        >
+          {icon}
+        </div>
+      )}
       <div className="heading-text">
         <h4
           style={{
-            fontWeight: "bold",
-            fontSize: "1.2rem",
+            fontSize: "var(--text-xl)",
+            fontWeight: "var(--font-bold)",
             color: textColor ? textColor : "#0f172a",
           }}
         >
           {title}
         </h4>
-        {subtitle ? <p style={{ color: "#475569" }}>{subtitle}</p> : null}
+        {subtitle ? (
+          <p style={{ color: "#475569", fontSize: "var(--text-sm)" }}>
+            {subtitle}
+          </p>
+        ) : null}
       </div>
     </div>
   );
@@ -98,9 +105,15 @@ const CustomHeading3 = ({ title, subtitle, icon }) => {
         {icon}
       </span>
       <div className="heading-text">
-        <h4 style={{ fontWeight: "bold", fontSize: "14px" }}>{title}</h4>
+        <h4
+          style={{ fontWeight: "var(--font-bold)", fontSize: "var(--text-sm)" }}
+        >
+          {title}
+        </h4>
         {subtitle ? (
-          <p style={{ fontSize: "10px", color: "#475569" }}>{subtitle}</p>
+          <p style={{ fontSize: "var(--text-xs)", color: "#475569" }}>
+            {subtitle}
+          </p>
         ) : null}
       </div>
     </div>
@@ -139,7 +152,7 @@ const CustomHeading4 = ({
       </div>
       <h2
         style={{
-          fontSize: "24px",
+          fontSize: "var(--text-2xl)",
           margin: "14px 0",
           background: textColor,
           WebkitBackgroundClip: "text",
@@ -150,7 +163,8 @@ const CustomHeading4 = ({
       </h2>
       <h4
         style={{
-          fontWeight: "500",
+          fontSize: "var(--text-lg)",
+          fontWeight: "var(--font-medium)",
           color: "#65768c",
           textAlign: "center",
         }}
@@ -161,10 +175,24 @@ const CustomHeading4 = ({
   );
 };
 
-const CustomButton = ({ label, onClick }) => {
+const CustomButton = ({
+  label,
+  onClick,
+  icon,
+  color,
+  backgroundColor,
+  hoverColor,
+}) => {
   return (
-    <button className="custom-button" onClick={onClick}>
-      {label}
+    <button
+      className="custom-button"
+      onClick={onClick}
+      style={{ color: color || "#f8fafc", background: backgroundColor }}
+      onMouseEnter={(e) => (e.currentTarget.style.background = hoverColor)}
+      onMouseLeave={(e) => (e.currentTarget.style.background = backgroundColor)}
+    >
+      {icon && <span className="button-icon">{icon}</span>}
+      <span>{label}</span>
     </button>
   );
 };
@@ -185,9 +213,9 @@ const CustomDotText = ({
       ></div>
       <span
         style={{
-          color: `${color}`,
-          fontSize: `${fontSize}px`,
-          fontWeight: `${fontWeight}`,
+          color,
+          fontSize: fontSize || "var(--text-sm)",
+          fontWeight: fontWeight || "var(--font-bold)",
         }}
       >
         {text}
@@ -231,6 +259,203 @@ const TabBar = ({ tabs, color }) => {
   );
 };
 
+const Tag = ({ tagName }) => {
+  return (
+    <div
+      className="tag"
+      style={{
+        color:
+          tagName === "completed" || tagName === "Excellent"
+            ? "#166434"
+            : tagName === "Good" || tagName === "In Progress"
+            ? "#1d40b0"
+            : "#854d0f",
+        background:
+          tagName === "completed" || tagName === "Excellent"
+            ? "#dcfce7"
+            : tagName === "Good" || tagName === "In Progress"
+            ? "#dbe9fe"
+            : "#fef9c3",
+        border:
+          tagName === "completed" || tagName === "Excellent"
+            ? "1px solid #bbf7d0"
+            : tagName === "Good" || tagName === "In Progress"
+            ? "1px solid #a9cbfdff"
+            : "1px solid #fef293",
+      }}
+    >
+      {tagName}
+    </div>
+  );
+};
+
+const InputBox = ({
+  label,
+  type,
+  dateType,
+  placeholder,
+  required,
+  focusColor,
+  height,
+  borderRadius,
+  min,
+  max,
+  value,
+  onChange,
+}) => {
+  // Generate appropriate input props based on dateType
+  const getDateInputProps = () => {
+    if (type !== "date") return {};
+
+    switch (dateType) {
+      case "day":
+        return {
+          type: "number",
+          min: "1",
+          max: "31",
+          placeholder: placeholder || "Enter day (1-31)",
+        };
+      case "month":
+        return {
+          type: "number",
+          min: "1",
+          max: "12",
+          placeholder: placeholder || "Enter month (1-12)",
+        };
+      case "year":
+        return {
+          type: "number",
+          min: min || "1900",
+          max: max || new Date().getFullYear().toString(),
+          placeholder: placeholder || "Enter year",
+        };
+      case "month-year":
+        return {
+          type: "month",
+          placeholder: placeholder || "Select month and year",
+        };
+      case "full":
+      default:
+        return {
+          type: "date",
+          placeholder: placeholder || "Select date",
+        };
+    }
+  };
+
+  const inputProps = type === "date" ? getDateInputProps() : { type };
+  return type !== "checkbox" ? (
+    <div className="input-box">
+      <label htmlFor={label}>
+        {label} {required && "*"}
+      </label>
+      <div className="input-field" style={{ borderRadius: `${borderRadius+4}px` }}>
+        <input
+          {...inputProps}
+          name={label}
+          id={label}
+          placeholder={placeholder}
+          required={required}
+          min={inputProps.min || (type === "number" ? "0" : undefined)}
+          max={inputProps.max}
+          value={value}
+          onChange={onChange}
+          style={{
+            "--focus-color": focusColor || "#e2e8f0",
+            height,
+            borderRadius: `${borderRadius}px`,
+          }}
+        />
+      </div>
+    </div>
+  ) : (
+    <div className="check-box">
+      <input
+        type="checkbox"
+        id={label}
+        name={label}
+        required={required}
+        onChange={onChange}
+        style={{ marginRight: "8px", cursor: "pointer" }}
+      />
+      <label
+        htmlFor={label}
+        style={{
+          fontSize: "var(--text-sm)",
+          fontWeight: "var(--font-semibold)",
+        }}
+      >
+        {label}
+      </label>
+    </div>
+  );
+};
+
+const DropDownMenu = ({
+  label,
+  options,
+  selectedOption,
+  onSelect,
+  required,
+  focusColor,
+  height,
+  borderRadius,
+  placeholder,
+}) => {
+  return (
+    <div className="dropdown-menu">
+      <label htmlFor={label}>
+        {label} {required && "*"}
+      </label>
+      <div className="dropdown" style={{ borderRadius: `${borderRadius+4}px` }}>
+        <select
+          name={label}
+          id={label}
+          value={selectedOption || ""}
+          onChange={(e) => onSelect(e.target.value)}
+          style={{
+            "--focus-color": focusColor || "#e2e8f0",
+            height,
+            borderRadius: `${borderRadius}px`,
+          }}
+        >
+          <option value="" disabled>
+            {placeholder || `Select ${label}`}
+          </option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+};
+
+const TextAreaBox = ({ label, placeholder, required, focusColor, height,
+  borderRadius, }) => {
+  return (
+    <div className="textarea-box" style={{marginBottom:"15px"}}>
+      <label htmlFor={label}>
+        {label} {required && "*"}
+      </label>
+      <div
+        className="input-field"
+        style={{ padding: "3px 3px 0", boxSizing: "border-box", borderRadius: `${borderRadius+4}px` }}
+      >
+        <textarea
+          id={label}
+          name={label}
+          placeholder={placeholder || "Enter detailed description here..."}
+          rows="4"
+          style={{ "--focus-color": focusColor || "#e2e8f0", height, borderRadius: `${borderRadius}px` }}
+        ></textarea>
+      </div>
+    </div>
+  );
+};
+
 const UploadImage = ({
   title,
   subtitle,
@@ -255,7 +480,6 @@ const UploadImage = ({
   // Function to extract GPS coordinates from EXIF data
   const extractGPSFromExif = (file) => {
     return new Promise((resolve) => {
-
       const EXIF = window.ExifReader || require("exifreader");
 
       const reader = new FileReader();
@@ -439,18 +663,15 @@ const UploadImage = ({
           </div>
           <p
             style={{
-              fontSize: "18px",
-              fontWeight: "bold",
-              color: titleColor || "#333",
+              fontSize: "var(--text-lg)",
+              fontWeight: "var(--font-bold)",
+              color: titleColor || "#333333",
             }}
           >
             {title || "Upload Photo"}
           </p>
-          <p style={{ fontSize: "14px", color: "#666", margin: "8px 0" }}>
-            {subtitle ||
-              "Location info will be extracted from uploaded photo for official records."}
-          </p>
-          <p style={{ fontSize: "12px", color: "#64758b" }}>
+          {subtitle}
+          <p style={{ fontSize: "var(--text-xs)", color: "#64758b" }}>
             {info || `Max size: ${maxSizeMB}MB • Supports: JPG, PNG, HEIC`}
           </p>
 
@@ -463,27 +684,31 @@ const UploadImage = ({
             disabled={isProcessing}
           />
 
-            <button
-              type="button"
-              className="upload-button"
-              style={{
-                background: isHovered? hoverColor || '#0056b3' :buttonColor || "#007bff",
-                color: "#fff",
-              }}
-              disabled={isProcessing}
-              onClick={() => document.getElementById("image-upload-input").click()}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <span style={{ marginRight: "8px" }}>
-                {isProcessing ? (
-                  <icons.AiOutlineLoading3Quarters className="spin" />
-                ) : (
-                  <icons.LuUpload />
-                )}
-              </span>
-              {isProcessing ? "Processing..." : "Choose Photo"}
-            </button>
+          <button
+            type="button"
+            className="upload-button"
+            style={{
+              background: isHovered
+                ? hoverColor || "#0056b3"
+                : buttonColor || "#007bff",
+              color: "#fff",
+            }}
+            disabled={isProcessing}
+            onClick={() =>
+              document.getElementById("image-upload-input").click()
+            }
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <span style={{ marginRight: "8px" }}>
+              {isProcessing ? (
+                <icons.AiOutlineLoading3Quarters className="spin" />
+              ) : (
+                <icons.LuUpload />
+              )}
+            </span>
+            {isProcessing ? "Processing..." : "Choose Photo"}
+          </button>
         </>
       )}
 
@@ -526,8 +751,8 @@ const UploadImage = ({
 
           <p
             style={{
-              fontSize: "14px",
-              fontWeight: "bold",
+              fontSize: "var(--text-sm)",
+              fontWeight: "var(--font-bold)",
               color: "#28a745",
               margin: "10px 0",
             }}
@@ -545,7 +770,7 @@ const UploadImage = ({
                 padding: "12px",
                 margin: "10px 0",
                 textAlign: "left",
-                fontSize: "12px",
+                fontSize: "var(--text-xs)",
               }}
             >
               <h5 style={{ margin: "0 0 8px 0", color: "#495057" }}>
@@ -592,7 +817,7 @@ const UploadImage = ({
             padding: "8px 12px",
             borderRadius: "4px",
             margin: "10px 0",
-            fontSize: "14px",
+            fontSize: "var(--text-sm",
           }}
         >
           ⚠️ {error}
@@ -612,4 +837,8 @@ export {
   ProgressIndicator,
   TabBar,
   UploadImage,
+  Tag,
+  InputBox,
+  DropDownMenu,
+  TextAreaBox,
 };

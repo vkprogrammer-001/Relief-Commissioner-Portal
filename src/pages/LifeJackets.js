@@ -1,7 +1,9 @@
-import DistributionTracking from "../components/DistributionTracking.js";
-import RecordDistribution from "../components/RecordDistribution.js";
-import { CustomHeading1, TabBar } from "../utility/CustomUi";
-import { icons } from "../utility/icons.js";
+import {
+  DistributionTracking,
+  RecordDistribution,
+} from "../components/index.js";
+import { CustomHeading1, TabBar } from "../utils/CustomUi.js";
+import { icons } from "../utils/icons.js";
 
 const LifeJackets = () => {
   const tabs = [
@@ -9,7 +11,6 @@ const LifeJackets = () => {
       id: "Record Distribution",
       icon: icons.IoCameraOutline(),
       content: <RecordDistribution />,
-
     },
     {
       id: "Distribution Tracking",

@@ -1,6 +1,6 @@
-import { CustomHeading2, CustomDotText } from "../utility/CustomUi";
-import { icons } from "../utility/icons.js";
-import "../styles/component-styles.css";
+import "../../styles/component-styles.css";
+import { CustomDotText, CustomHeading2 } from "../../utils/CustomUi.js";
+import { icons } from "../../utils/icons.js";
 
 const SystemAlertCard = () => {
   const menu = [
@@ -38,8 +38,6 @@ const SystemAlertCard = () => {
             text={item.message}
             color={"#92400d"}
             dotcolor={item.dotColor}
-            fontSize={14}
-            fontWeight={"bold"}
             dotblink={"blinking-dot"}
           />
         </div>

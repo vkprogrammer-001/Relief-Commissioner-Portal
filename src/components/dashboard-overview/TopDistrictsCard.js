@@ -1,10 +1,10 @@
+import "../../styles/component-styles.css";
 import {
-  CustomHeading2,
   CustomDotText,
+  CustomHeading2,
   ProgressIndicator,
-} from "../utility/CustomUi";
-import { icons } from "../utility/icons.js";
-import "../styles/component-styles.css";
+} from "../../utils/CustomUi.js";
+import { icons } from "../../utils/icons.js";
 
 const TopDistrictsCard = () => {
   const menu = [
@@ -62,19 +62,13 @@ const TopDistrictsCard = () => {
       {menu.map((item) => (
         <div className="district-card" key={item.districts}>
           <div className="district-info-top">
-            <CustomDotText
-              text={item.districts}
-              dotcolor={item.color}
-              fontSize={"14px"}
-              fontWeight={"bold"}
-            />
+            <CustomDotText text={item.districts} dotcolor={item.color} />
             <p>{item.percentage}%</p>
           </div>
           <ProgressIndicator progress={item.percentage} />
           <div className="district-info-bottom">
             <div
               style={{
-                fontSize: "12px",
                 color: "#64758b",
                 alignItems: "center",
                 display: "flex",
@@ -85,7 +79,6 @@ const TopDistrictsCard = () => {
             </div>
             <div
               style={{
-                fontSize: "12px",
                 color: "#64758b",
                 alignItems: "center",
                 display: "flex",

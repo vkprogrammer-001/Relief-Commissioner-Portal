@@ -1,7 +1,6 @@
-import RegisteredGhaats from "../components/RegisteredGhaats.js";
-import RegisterNewGhaats from "../components/RegisterNewGhaats.js";
-import { CustomHeading1, TabBar } from "../utility/CustomUi";
-import { icons } from "../utility/icons.js";
+import { RegisterNewGhaats, RegisteredGhaats } from "../components/index.js";
+import { CustomHeading1, TabBar } from "../utils/CustomUi.js";
+import { icons } from "../utils/icons.js";
 
 const Ghaats = () => {
   const tabs = [
@@ -9,7 +8,6 @@ const Ghaats = () => {
       id: "Register New Ghaat",
       icon: icons.IoCameraOutline(),
       content: <RegisterNewGhaats />,
-
     },
     {
       id: "Ghaat Directory",

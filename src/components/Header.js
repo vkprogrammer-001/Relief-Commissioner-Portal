@@ -12,14 +12,15 @@ const Header = () => {
           <div className="header-title">
             <h1
               style={{
-                background: "linear-gradient(to right, #2860ea, #8736eb)",
+                fontSize: "var(--text-3xl)",
+                background: "var(--gradient-bg-main)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
             >
               Relief Commissioner Portal
             </h1>
-            <h4 style={{ color: "#475569"}}>
+            <h4 style={{ color: "#475569", fontSize: "var(--text-sm)" }}>
               Advanced Boat Management System • Uttar Pradesh
             </h4>
           </div>

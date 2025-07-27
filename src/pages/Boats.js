@@ -1,7 +1,6 @@
-import { CustomHeading1, TabBar } from "../utility/CustomUi";
-import RegisterNewBoat from "../components/RegisterNewBoat";
-import RegisteredBoats from "../components/RegisteredBoats";
-import { icons } from "../utility/icons.js";
+import { RegisterNewBoat, RegisteredBoats } from "../components/index.js";
+import { CustomHeading1, TabBar } from "../utils/CustomUi.js";
+import { icons } from "../utils/icons.js";
 
 const Boats = () => {
   const tabs = [
@@ -9,7 +8,6 @@ const Boats = () => {
       id: "Register New Boat",
       icon: icons.IoBoatOutline(),
       content: <RegisterNewBoat />,
-
     },
     {
       id: "Boat Directory",

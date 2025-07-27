@@ -1,28 +1,33 @@
-import { TabBar } from "../utility/CustomUi";
-import RegisterNewBoat from "../components/RegisterNewBoat";
+import {
+  Analytics,
+  ConductInspection,
+  InspectionRecord,
+  InspectionSchedule,
+} from "../components/index";
+import { TabBar } from "../utils/CustomUi";
 
 const Inspection = () => {
   const tabs = [
     {
       id: "Conduct Inspection",
-      content: <RegisterNewBoat />,
+      content: <ConductInspection />,
     },
     {
       id: "Inspection Records",
-      content: <RegisterNewBoat />,
+      content: <InspectionRecord />,
     },
     {
       id: "Inspection Schedule",
-      content: <RegisterNewBoat />,
+      content: <InspectionSchedule />,
     },
     {
       id: "Analytics",
-      content: <RegisterNewBoat />,
+      content: <Analytics />,
     },
   ];
   return (
     <div>
-      <TabBar tabs={tabs} color={"#020817"}/>
+      <TabBar tabs={tabs} color={"#020817"} />
     </div>
   );
 };
