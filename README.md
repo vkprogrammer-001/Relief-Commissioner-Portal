@@ -51,8 +51,8 @@ npm or yarn
 ### Installation & Setup
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd DashBoard11/dashboard
+git clone https://github.com/vkprogrammer-001/Relief-Commissioner-Portal
+cd dashboard
 
 # Install dependencies
 npm install
