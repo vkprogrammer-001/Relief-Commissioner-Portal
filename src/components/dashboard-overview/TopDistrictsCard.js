@@ -57,7 +57,7 @@ const TopDistrictsCard = () => {
             }}
           />
         }
-        bg={"var(--gradient-bg-fourth)"}
+        iconBg={"var(--gradient-bg-fourth)"}
       />
       {menu.map((item) => (
         <div className="district-card" key={item.districts}>

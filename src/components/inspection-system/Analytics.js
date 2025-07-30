@@ -1,10 +1,15 @@
+import { CustomHeading2 } from "../../utils/CustomUi";
+
 const Analytics = () => {
   return (
     <div>
-      <h1>Analytics Component</h1>
-      {/* Add your analytics content here */}
+      <CustomHeading2
+        title={"Inspection Status Overview"}
+        titleSize={"var(--text-2xl)"}
+        subtitle={"Current year inspection completion status"}
+      />
     </div>
   );
-}
+};
 
 export default Analytics;

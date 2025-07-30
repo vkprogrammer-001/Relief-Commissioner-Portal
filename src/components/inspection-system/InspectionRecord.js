@@ -5,6 +5,7 @@ const InspectionRecord = () => {
     <div>
       <CustomHeading2
         title={"Inspection Records"}
+        titleSize={"var(--text-2xl)"}
         subtitle={"Complete history of all boat inspections"}
       />
     </div>

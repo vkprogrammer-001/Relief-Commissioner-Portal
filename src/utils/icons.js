@@ -1,4 +1,4 @@
-import { BsClipboardCheck, BsExclamationTriangle } from "react-icons/bs";
+import { BsClipboardCheck, BsExclamationTriangle, BsBoxSeam } from "react-icons/bs";
 import { FaRegChartBar } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { IoMdCheckmarkCircleOutline, IoIosTrendingUp } from "react-icons/io";
@@ -18,6 +18,7 @@ export const icons = {
     LuShield,
     LuUpload,
     FiArrowUpRight,
+    BsBoxSeam,
     BsClipboardCheck,
     BsExclamationTriangle,
     IoMdCheckmarkCircleOutline,

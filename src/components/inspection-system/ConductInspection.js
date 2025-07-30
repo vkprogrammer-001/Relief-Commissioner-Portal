@@ -19,6 +19,7 @@ const ConductInspection = () => {
     <div>
       <CustomHeading2
         title={"Annual Boat Inspection Form"}
+        titleSize={"var(--text-2xl)"}
         subtitle={
           "Complete annual safety and compliance inspection for rescue boats"
         }
@@ -110,7 +111,11 @@ const ConductInspection = () => {
           placeholder={"Additional comments about the inspection"}
           borderRadius={8}
         />
-        <CustomButton label={"Complete Inspection"} backgroundColor={"#2463eb"} hoverColor={"#1c4ed8"}/>
+        <CustomButton
+          label={"Complete Inspection"}
+          backgroundColor={"#2463eb"}
+          hoverColor={"#1c4ed8"}
+        />
       </form>
     </div>
   );

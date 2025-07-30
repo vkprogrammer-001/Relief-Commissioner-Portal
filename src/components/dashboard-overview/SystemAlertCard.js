@@ -29,8 +29,8 @@ const SystemAlertCard = () => {
             }}
           />
         }
-        bg={"var(--gradient-bg-fifth)"}
-        textColor={"#78350f"}
+        iconBg={"var(--gradient-bg-fifth)"}
+        titleColor={"#78350f"}
       />
       {menu.map((item) => (
         <div className="alert-list" key={item.message}>
