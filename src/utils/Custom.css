@@ -14,7 +14,6 @@
 .heading-text {
     display: flex;
     flex-direction: column;
-    gap: 4px;
 }
 
 .heading-icon {
@@ -122,29 +121,36 @@
     border-radius: 15px;
 }
 
-.input-box, .dropdown-menu, .textarea-box {
-    display: flex;
-    flex-direction: column;
+.input-box,
+.dropdown-menu,
+.textarea-box {
+  display: flex;
+  flex-direction: column;
 }
 
-.input-box > label, .dropdown-menu > label, .textarea-box > label {
+.input-box > label,
+.dropdown-menu > label,
+.textarea-box > label {
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
     margin-bottom: 8px;
     color: #334155;
 }
 
-.input-field, .dropdown {
+.input-field,
+.dropdown {
     border: 2px solid transparent;
     border-radius: 15px;
     padding: 2px;
 }
 
-.input-field:focus-within, .dropdown:focus-within {
+.input-field:focus-within,
+.dropdown:focus-within {
     border-color: #000000;
 }
 
-.input-field > input, .input-field > textarea {
+.input-field > input,
+.input-field > textarea {
     height: 48px;
     width: 100%;
     padding: 8px 12px;
@@ -157,7 +163,8 @@
     resize: vertical;
 }
 
-.input-field > input:focus, .input-field > textarea:focus {
+.input-field > input:focus,
+.input-field > textarea:focus {
     border: 2px solid var(--focus-color);
     outline: none;
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-color) 10%, transparent);
@@ -200,7 +207,8 @@
 }
 
 /* Cross-browser form element reset */
-select, input {
+select,
+input {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -216,4 +224,35 @@ select, input {
     font-weight: var(--font-semibold);
     border:none;
     margin: 20px 0;
+}
+
+/* InfoCard responsive styles */
+.summary-card-container {
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-Direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.summary-card-left {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-right: 12px;
+}
+
+.summary-card-right {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
 }

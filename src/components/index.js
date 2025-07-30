@@ -12,6 +12,9 @@ export { default as RegisteredBoats} from "./boat-management/RegisteredBoats";
 export { default as RegisterNewGhaats } from "./ghaat-management/RegisterNewGhaats";
 export { default as RegisteredGhaats } from "./ghaat-management/RegisteredGhaats";
 
+// district management components
+export { default as DistrictSummaryCards } from "./district-management/DistrictSummaryCards";
+
 // life jacket distribution components
 export { default as RecordDistribution } from "./life-jacket-distribution/RecordDistribution";
 export { default as DistributionTracking } from "./life-jacket-distribution/DistributionTracking";

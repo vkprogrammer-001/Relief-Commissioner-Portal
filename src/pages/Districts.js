@@ -1,7 +1,8 @@
+import { DistrictSummaryCards } from "../components";
 const Districts = () => {
     return (
         <div>
-            <h1>Districts</h1>
+            <DistrictSummaryCards />
         </div>
     )
 }

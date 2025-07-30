@@ -20,7 +20,7 @@ const CustomHeading1 = ({
             padding: "12px",
             borderRadius: "12px",
             background: bg,
-            color: iconColor ? iconColor : "#fff",
+            color: iconColor || "#fff",
           }}
         >
           {icon}
@@ -53,24 +53,34 @@ const CustomHeading1 = ({
 };
 
 const CustomHeading2 = ({
-  title,
-  subtitle,
   icon,
-  bg,
+  iconBg,
   iconColor,
-  textColor,
+  iconSize,
+  title,
+  titleSize,
+  titleWeight,
+  titleColor,
+  titleMarginBottom,
+  subtitle,
+  subtitleSize,
+  subtitleWeight,
+  subtitleColor,
 }) => {
   return (
     <div className="custom-heading">
       {icon && (
         <div
           style={{
-            height: "40px",
-            width: "40px",
-            padding: "10px",
+            boxSizing: "border-box",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "8px",
             borderRadius: "10px",
-            background: bg,
-            color: iconColor ? iconColor : "#fff",
+            background: iconBg || "#ffffff",
+            fontSize: iconSize || "20px",
+            color: iconColor || "#ffffff",
           }}
         >
           {icon}
@@ -79,39 +89,22 @@ const CustomHeading2 = ({
       <div className="heading-text">
         <h4
           style={{
-            fontSize: "var(--text-xl)",
-            fontWeight: "var(--font-bold)",
-            color: textColor ? textColor : "#0f172a",
+            fontSize: titleSize || "var(--text-xl)",
+            fontWeight: titleWeight || "var(--font-bold)",
+            color: titleColor || "#0f172a",
+            marginBottom: titleMarginBottom || "5px",
           }}
         >
           {title}
         </h4>
         {subtitle ? (
-          <p style={{ color: "#475569", fontSize: "var(--text-sm)" }}>
-            {subtitle}
-          </p>
-        ) : null}
-      </div>
-    </div>
-  );
-};
-
-const CustomHeading3 = ({ title, subtitle, icon }) => {
-  return (
-    <div className="custom-heading">
-      <span
-        style={{ padding: "8px", borderRadius: "10px", background: "#ffffff" }}
-      >
-        {icon}
-      </span>
-      <div className="heading-text">
-        <h4
-          style={{ fontWeight: "var(--font-bold)", fontSize: "var(--text-sm)" }}
-        >
-          {title}
-        </h4>
-        {subtitle ? (
-          <p style={{ fontSize: "var(--text-xs)", color: "#475569" }}>
+          <p
+            style={{
+              color: subtitleColor || "#475569",
+              fontSize: subtitleSize || "var(--text-sm)",
+              fontWeight: subtitleWeight || "var(--font-medium)",
+            }}
+          >
             {subtitle}
           </p>
         ) : null}
@@ -145,7 +138,7 @@ const CustomHeading4 = ({
           padding: "12px",
           borderRadius: "12px",
           background: bg,
-          color: iconColor ? iconColor : "#fff",
+          color: iconColor || "#fff",
         }}
       >
         {icon}
@@ -220,6 +213,194 @@ const CustomDotText = ({
       >
         {text}
       </span>
+    </div>
+  );
+};
+
+const SummaryCard = ({
+  // Main container props
+  containerBg = "#ffffff",
+  containerBorderRadius = "8px",
+  containerShadow,
+  containerBorder = "1px solid #e2e8f0",
+
+  // Corner icons (first and third containers)
+  leftIcon = null,
+  leftIconBg,
+  leftIconColor = "#ffffff",
+  leftIconSize = "24px",
+
+  rightIcon = null,
+  rightIconBg = null,
+  rightIconColor = "#374151",
+  rightIconSize = "24px",
+  dotblink = false,
+  dotcolor,
+
+  // Main content (second container)
+  mainIcon = null,
+  mainIconBg = "#3b82f6",
+  mainIconColor = "#ffffff",
+  mainIconSize = "25px",
+
+  // Text content
+  title = "Card Title",
+  titleColor = "#1f2937",
+  titleSize = "var(--text-sm)",
+  titleWeight = "var(--font-semibold)",
+
+  value = null,
+  valueColor = "#1f2937",
+  valueSize = "var(--text-2xl)",
+  valueWeight = "var(--font-bold)",
+
+  info = null,
+  infoIcon = null,
+  infoColor = "#6b7280",
+  infoSize = "var(--text-xs)",
+  infoWeight = "var(--font-semibold)",
+
+  hovered = false,
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Base styles
+  const baseStyles = {
+    background: containerBg,
+    borderRadius: containerBorderRadius,
+    boxShadow: containerShadow,
+    border: containerBorder,
+    transition: hovered ? "all 0.3s ease-in-out" : "none",
+    transform: "translateY(0)",
+  };
+
+  // Hover styles
+  const hoveredStyles =
+    hovered && isHovered
+      ? {
+          transform: "translateY(-5px)",
+          boxShadow: "0 6px 15px -1px rgba(0, 0, 0, 0.3)",
+        }
+      : {};
+
+  // Combined styles
+  const containerStyles = { ...baseStyles, ...hoveredStyles };
+
+  return (
+    <div
+      className="summary-card-container"
+      style={containerStyles}
+      onMouseEnter={() => hovered && setIsHovered(true)}
+      onMouseLeave={() => hovered && setIsHovered(false)}
+    >
+      {/* First Container - Left Corner Icon */}
+      {leftIcon && (
+        <div
+          className="summary-card-left"
+          style={{
+            background: leftIconBg,
+            color: leftIconColor,
+            fontSize: leftIconSize,
+          }}
+        >
+          {leftIcon}
+        </div>
+      )}
+      {/* Second Container - Main Content */}
+      <div
+        className="summary-card-main"
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {/* Main Icon */}
+        {mainIcon && (
+          <div
+            style={{
+              width: "50px",
+              height: "50px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: mainIconBg,
+              borderRadius: "12px",
+              color: mainIconColor,
+              fontSize: mainIconSize,
+              marginBottom: "12px",
+            }}
+          >
+            {mainIcon}
+          </div>
+        )}
+
+        {/* Text Container 1 - Title */}
+        <div
+          className="summary-card-title"
+          style={{
+            fontSize: titleSize,
+            fontWeight: titleWeight,
+            color: titleColor,
+            marginBottom: value || info ? "2px" : "0",
+            lineHeight: "1.4",
+          }}
+        >
+          {title}
+        </div>
+
+        {/* Text Container 2 - Info */}
+        {value && (
+          <div
+            className="summary-card-value"
+            style={{
+              fontSize: valueSize,
+              fontWeight: valueWeight,
+              color: valueColor,
+              marginBottom: info ? "2px" : "0",
+              lineHeight: "1.2",
+            }}
+          >
+            {value}
+          </div>
+        )}
+
+        {/* Text Container 3 -  info */}
+        {info && (
+          <div
+            className="summary-card-subtitle"
+            style={{
+              fontSize: infoSize,
+              fontWeight: infoWeight,
+              color: infoColor,
+              lineHeight: "1.4",
+            }}
+          >
+            {infoIcon}
+            {info}
+          </div>
+        )}
+      </div>
+      {/* Third Container - Right Corner Icon */}
+      {rightIcon ? (
+        <div
+          className="summary-card-right"
+          style={{
+            background: rightIconBg,
+            color: rightIconColor,
+            fontSize: rightIconSize,
+          }}
+        >
+          {rightIcon}
+        </div>
+      ) : (
+        dotcolor && (
+          <div
+            className={`dot ${dotblink}`}
+            style={{ background: dotcolor, width: "16px", height: "16px" }}
+          ></div>
+        )
+      )}
     </div>
   );
 };
@@ -349,7 +530,10 @@ const InputBox = ({
       <label htmlFor={label}>
         {label} {required && "*"}
       </label>
-      <div className="input-field" style={{ borderRadius: `${borderRadius+4}px` }}>
+      <div
+        className="input-field"
+        style={{ borderRadius: `${borderRadius + 4}px` }}
+      >
         <input
           {...inputProps}
           name={label}
@@ -407,7 +591,10 @@ const DropDownMenu = ({
       <label htmlFor={label}>
         {label} {required && "*"}
       </label>
-      <div className="dropdown" style={{ borderRadius: `${borderRadius+4}px` }}>
+      <div
+        className="dropdown"
+        style={{ borderRadius: `${borderRadius + 4}px` }}
+      >
         <select
           name={label}
           id={label}
@@ -433,23 +620,37 @@ const DropDownMenu = ({
   );
 };
 
-const TextAreaBox = ({ label, placeholder, required, focusColor, height,
-  borderRadius, }) => {
+const TextAreaBox = ({
+  label,
+  placeholder,
+  required,
+  focusColor,
+  height,
+  borderRadius,
+}) => {
   return (
-    <div className="textarea-box" style={{marginBottom:"15px"}}>
+    <div className="textarea-box" style={{ marginBottom: "15px" }}>
       <label htmlFor={label}>
         {label} {required && "*"}
       </label>
       <div
         className="input-field"
-        style={{ padding: "3px 3px 0", boxSizing: "border-box", borderRadius: `${borderRadius+4}px` }}
+        style={{
+          padding: "3px 3px 0",
+          boxSizing: "border-box",
+          borderRadius: `${borderRadius + 4}px`,
+        }}
       >
         <textarea
           id={label}
           name={label}
           placeholder={placeholder || "Enter detailed description here..."}
           rows="4"
-          style={{ "--focus-color": focusColor || "#e2e8f0", height, borderRadius: `${borderRadius}px` }}
+          style={{
+            "--focus-color": focusColor || "#e2e8f0",
+            height,
+            borderRadius: `${borderRadius}px`,
+          }}
         ></textarea>
       </div>
     </div>
@@ -830,7 +1031,6 @@ const UploadImage = ({
 export {
   CustomHeading1,
   CustomHeading2,
-  CustomHeading3,
   CustomHeading4,
   CustomButton,
   CustomDotText,
@@ -841,4 +1041,5 @@ export {
   InputBox,
   DropDownMenu,
   TextAreaBox,
+  SummaryCard,
 };
