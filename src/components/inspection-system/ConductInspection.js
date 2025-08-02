@@ -16,7 +16,7 @@ import {
 
 const ConductInspection = () => {
   return (
-    <div>
+    <div className="tab-content box-style1">
       <CustomHeading2
         title={"Annual Boat Inspection Form"}
         titleSize={"var(--text-2xl)"}

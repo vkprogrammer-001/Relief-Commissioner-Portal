@@ -32,8 +32,6 @@ const DistrictSummaryCards = () => {
       {cardSummary.map((card) => (
         <SummaryCard
           title={card.title}
-          titleSize="14px"
-          valueSize="14px"
           value={card.value}
           info={card.info}
           dotcolor={card.color}

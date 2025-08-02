@@ -1,7 +1,4 @@
-import {
-  jacketsPerBoat,
-  upDistricts,
-} from "../../data/index";
+import { jacketsPerBoat, upDistricts } from "../../data/index";
 import {
   CustomButton,
   CustomHeading4,
@@ -13,7 +10,7 @@ import { icons } from "../../utils/icons";
 
 const RecordDistribution = () => {
   return (
-    <div>
+    <div className="tab-content">
       <CustomHeading4
         title={"Record Life Jacket Distribution"}
         subtitle={
@@ -100,9 +97,7 @@ const RecordDistribution = () => {
         <CustomButton
           label={"Register Ghaat"}
           onClick={() => {}}
-          icon={
-            <icons.LuShield style={{ width: "18px", height: "18px" }} />
-          }
+          icon={<icons.LuShield style={{ width: "18px", height: "18px" }} />}
           color={"#ffffff"}
           backgroundColor={"var(--gradient-bg-fifth)"}
           hoverColor={"linear-gradient(to right, #ea580b, #dc2625)"}

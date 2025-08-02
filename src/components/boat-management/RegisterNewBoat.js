@@ -33,7 +33,7 @@ const RegisterNewBoat = () => {
     }
   };
   return (
-    <div>
+    <div className="tab-content">
       <CustomHeading4
         title={"Register Rescue Boat"}
         subtitle={

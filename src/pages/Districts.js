@@ -1,8 +1,9 @@
-import { DistrictSummaryCards } from "../components";
+import { DistrictSummaryCards, DistrictMonitoringDashboard } from "../components";
 const Districts = () => {
     return (
         <div>
             <DistrictSummaryCards />
+            <DistrictMonitoringDashboard />
         </div>
     )
 }

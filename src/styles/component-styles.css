@@ -155,7 +155,7 @@ button:hover {
   justify-content: center;
 }
 
-.dashboard-card-container, .district-summary-cards {
+.dashboard-card-container, .district-summary-cards, .analytics-summary-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
@@ -283,7 +283,7 @@ button:hover {
   margin-bottom: 25px;
 }
 
-.life-jacket-distribution-summary-container {
+.life-jacket-distribution-summary-container, .flash-cards-container {
   display: flex;
   flex:1;
   gap: 20px;

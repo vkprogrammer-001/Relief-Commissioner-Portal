@@ -28,7 +28,7 @@ const RegisterNewGhaats = () => {
     }
   };
   return (
-    <div>
+    <div className="tab-content">
       <CustomHeading4
         title={"Register New River Port"}
         subtitle={

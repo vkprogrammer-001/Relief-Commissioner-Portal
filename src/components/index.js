@@ -14,6 +14,7 @@ export { default as RegisteredGhaats } from "./ghaat-management/RegisteredGhaats
 
 // district management components
 export { default as DistrictSummaryCards } from "./district-management/DistrictSummaryCards";
+export { default as DistrictMonitoringDashboard } from "./district-management/DistrictMonitoringDashboard";
 
 // life jacket distribution components
 export { default as RecordDistribution } from "./life-jacket-distribution/RecordDistribution";

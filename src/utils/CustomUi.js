@@ -175,12 +175,21 @@ const CustomButton = ({
   color,
   backgroundColor,
   hoverColor,
+  border,
+  height,
+  width,
 }) => {
   return (
     <button
       className="custom-button"
       onClick={onClick}
-      style={{ color: color || "#f8fafc", background: backgroundColor }}
+      style={{
+        color: color || "#f8fafc",
+        background: backgroundColor,
+        border,
+        height,
+        width,
+      }}
       onMouseEnter={(e) => (e.currentTarget.style.background = hoverColor)}
       onMouseLeave={(e) => (e.currentTarget.style.background = backgroundColor)}
     >
@@ -223,6 +232,7 @@ const SummaryCard = ({
   containerBorderRadius = "8px",
   containerShadow,
   containerBorder = "1px solid #e2e8f0",
+  contentAlign,
 
   // Corner icons (first and third containers)
   leftIcon = null,
@@ -244,7 +254,7 @@ const SummaryCard = ({
   mainIconSize = "25px",
 
   // Text content
-  title = "Card Title",
+  title,
   titleColor = "#1f2937",
   titleSize = "var(--text-sm)",
   titleWeight = "var(--font-semibold)",
@@ -313,6 +323,7 @@ const SummaryCard = ({
           flex: 1,
           display: "flex",
           flexDirection: "column",
+          alignItems: contentAlign,
         }}
       >
         {/* Main Icon */}
@@ -433,9 +444,7 @@ const TabBar = ({ tabs, color }) => {
           </div>
         ))}
       </div>
-      <div className="tab-content">
-        {tabs.map((tab) => (activeTab === tab.id ? tab.content : ""))}
-      </div>
+      {tabs.map((tab) => (activeTab === tab.id ? tab.content : ""))}
     </div>
   );
 };
@@ -443,22 +452,31 @@ const TabBar = ({ tabs, color }) => {
 const Tag = ({ tagName }) => {
   return (
     <div
-      className="tag"
+      className="tag-content"
       style={{
         color:
-          tagName === "completed" || tagName === "Excellent"
+          tagName === "completed" ||
+          tagName === "Excellent" ||
+          tagName === "Active" ||
+          tagName === "Operational"
             ? "#166434"
             : tagName === "Good" || tagName === "In Progress"
             ? "#1d40b0"
             : "#854d0f",
         background:
-          tagName === "completed" || tagName === "Excellent"
+          tagName === "completed" ||
+          tagName === "Excellent" ||
+          tagName === "Active" ||
+          tagName === "Operational"
             ? "#dcfce7"
             : tagName === "Good" || tagName === "In Progress"
             ? "#dbe9fe"
             : "#fef9c3",
         border:
-          tagName === "completed" || tagName === "Excellent"
+          tagName === "completed" ||
+          tagName === "Excellent" ||
+          tagName === "Active" ||
+          tagName === "Operational"
             ? "1px solid #bbf7d0"
             : tagName === "Good" || tagName === "In Progress"
             ? "1px solid #a9cbfdff"
@@ -653,6 +671,108 @@ const TextAreaBox = ({
           }}
         ></textarea>
       </div>
+    </div>
+  );
+};
+
+const CustomTable = ({
+  headingList = [],
+  dataList = [],
+  headerBg = "#f8f9fa",
+  borderColor = "#f1f4f6ff",
+  hoverColor = "#f5f5f5",
+}) => {
+  return (
+    <div>
+      <table
+        className="custom-table"
+        style={{
+          border: `1px solid ${borderColor}`,
+        }}
+      >
+        {/* Table Header */}
+        <thead>
+          <tr style={{ background: headerBg }}>
+            {headingList.map((heading, index) => (
+              <th
+                key={index}
+                style={{
+                  padding: "15px 16px",
+                  textAlign: "left",
+                  fontWeight: "var(--font-semibold)",
+                  fontSize: "var(--text-sm)",
+                  borderBottom: `1px solid ${borderColor}`,
+                  color: "#64758b",
+                }}
+              >
+                {heading}
+              </th>
+            ))}
+          </tr>
+        </thead>
+
+        {/* Table Body */}
+        <tbody>
+          {dataList.map((rowData, rowIndex) => (
+            <tr
+              key={rowIndex}
+              style={{
+                transition: "background-color 0.2s ease",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = hoverColor)
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "transparent")
+              }
+            >
+              {Array.isArray(rowData)
+                ? // If rowData is an array, render each cell
+                  rowData.map((cellData, cellIndex) => (
+                    <td
+                      key={cellIndex}
+                      style={{
+                        borderBottom: `1px solid ${borderColor}`,
+                        padding: "16px",
+                        fontSize: "var(--text-sm)",
+                      }}
+                    >
+                      {cellData}
+                    </td>
+                  ))
+                : // If rowData is an object, render based on headings
+                  headingList.map((heading, cellIndex) => (
+                    <td
+                      key={cellIndex}
+                      style={{
+                        padding: "12px 16px",
+                        fontSize: "var(--text-sm)",
+                        color: "#6b7280",
+                      }}
+                    >
+                      {rowData[heading] ||
+                        rowData[heading.toLowerCase()] ||
+                        "-"}
+                    </td>
+                  ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Empty State */}
+      {dataList.length === 0 && (
+        <div
+          style={{
+            textAlign: "center",
+            padding: "40px 20px",
+            color: "#9ca3af",
+            fontSize: "var(--text-sm)",
+          }}
+        >
+          No data available
+        </div>
+      )}
     </div>
   );
 };
@@ -1034,12 +1154,13 @@ export {
   CustomHeading4,
   CustomButton,
   CustomDotText,
-  ProgressIndicator,
-  TabBar,
-  UploadImage,
-  Tag,
-  InputBox,
+  CustomTable,
   DropDownMenu,
-  TextAreaBox,
+  InputBox,
+  ProgressIndicator,
   SummaryCard,
+  TabBar,
+  Tag,
+  TextAreaBox,
+  UploadImage,
 };
