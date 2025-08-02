@@ -9,7 +9,7 @@ const SystemAlertCard = () => {
       dotColor: "#ecb40e",
     },
     {
-      message: "Life jacket shortage reported in 3 ghaats",
+      message: "Life jacket shortage reported in 3 ghats",
       dotColor: "#f04647",
     },
     {

@@ -4,7 +4,7 @@ import {
   CustomTable,
   CustomButton,
 } from "../../utils/CustomUi";
-const RegisteredGhaats = () => {
+const RegisteredGhats = () => {
   const viewDetails = (
     <CustomButton
       label={"View Details"}
@@ -17,7 +17,7 @@ const RegisteredGhaats = () => {
   return (
     <div className="tab-content">
       <CustomHeading2
-        title={"Registered Ghaats"}
+        title={"Registered Ghats"}
         subtitle={
           "Complete directory of all registered river ports with real-time status"
         }
@@ -30,7 +30,7 @@ const RegisteredGhaats = () => {
       />
       <CustomTable
         headingList={[
-          "Ghaat Name",
+          "Ghat Name",
           "District",
           "River",
           "Boats Assigned",
@@ -40,7 +40,7 @@ const RegisteredGhaats = () => {
         ]}
         dataList={[
           [
-            "Dashashwamedh Ghaat",
+            "Dashashwamedh Ghat",
             "Varanasi",
             "Ganga",
             "5/10",
@@ -49,7 +49,7 @@ const RegisteredGhaats = () => {
             viewDetails,
           ],
           [
-            "Gomti Ghaat",
+            "Gomti Ghat",
             "Lucknow",
             "Gomti",
             "3/5",
@@ -65,4 +65,4 @@ const RegisteredGhaats = () => {
   );
 };
 
-export default RegisteredGhaats;
+export default RegisteredGhats;

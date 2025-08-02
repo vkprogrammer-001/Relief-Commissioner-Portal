@@ -1,25 +1,25 @@
-import { RegisterNewGhaats, RegisteredGhaats } from "../components/index.js";
+import { RegisterNewGhats, RegisteredGhats } from "../components/index.js";
 import { CustomHeading1, TabBar } from "../utils/CustomUi.js";
 import { icons } from "../utils/icons.js";
 
-const Ghaats = () => {
+const Ghats = () => {
   const tabs = [
     {
-      id: "Register New Ghaat",
+      id: "Register New Ghat",
       icon: icons.IoCameraOutline(),
-      content: <RegisterNewGhaats />,
+      content: <RegisterNewGhats />,
     },
     {
-      id: "Ghaat Directory",
+      id: "Ghat Directory",
       icon: icons.IoLocationOutline(),
-      content: <RegisteredGhaats />,
+      content: <RegisteredGhats />,
     },
   ];
 
   return (
     <div>
       <CustomHeading1
-        title={"Ghaat Management"}
+        title={"Ghat Management"}
         subtitle={
           "Register and manage river ports across Uttar Pradesh with advanced geolocation and photo documentation"
         }
@@ -39,4 +39,4 @@ const Ghaats = () => {
   );
 };
 
-export default Ghaats;
+export default Ghats;

@@ -6,7 +6,7 @@ const RecentActivityCard = () => {
   const menu = [
     {
       title: "New boat registered",
-      subtitle: "Varanasi Ghaat",
+      subtitle: "Varanasi Ghat",
       icon: <icons.IoBoatOutline style={{ color: "#079669" }} />,
       tag: "completed",
       time: "2 hours ago",
@@ -20,7 +20,7 @@ const RecentActivityCard = () => {
     },
     {
       title: "Life jackets distributed",
-      subtitle: "Lucknow Ghaat",
+      subtitle: "Lucknow Ghat",
       icon: <icons.LuShield style={{ color: "#ea580b" }} />,
       tag: "completed",
       time: "1 day ago",

@@ -6,7 +6,7 @@ const DistributionTracking = () => {
       <CustomHeading2
         title={"Distribution Tracking"}
         subtitle={
-          "Monitor life jacket distribution across all districts and ghaats"
+          "Monitor life jacket distribution across all districts and ghats"
         }
         titleColor={"#e74f10"}
         titleSize={"var(--text-2xl)"}
@@ -18,7 +18,7 @@ const DistributionTracking = () => {
       <CustomTable
         headingList={[
           "District",
-          "Ghaat",
+          "Ghat",
           "Boats",
           "Allocated",
           "Distributed",
@@ -28,7 +28,7 @@ const DistributionTracking = () => {
         dataList={[
           [
             "Varanasi",
-            "Dashashwamedh Ghaat",
+            "Dashashwamedh Ghat",
             "5",
             "50",
             "45",
@@ -37,7 +37,7 @@ const DistributionTracking = () => {
           ],
           [
             "Lucknow",
-            "Gomti Ghaat",
+            "Gomti Ghat",
             "3",
             "30",
             "30",

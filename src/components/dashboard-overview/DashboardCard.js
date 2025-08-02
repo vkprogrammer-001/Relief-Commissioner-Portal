@@ -21,7 +21,7 @@ const DashboardCard = () => {
       hikeValue: "+23",
     },
     {
-      title: "Active Ghaats",
+      title: "Active Ghats",
       value: 156,
       icon: <icons.MdOutlineWaves style={{ height: "25px", width: "25px" }} />,
       bg: "var(--gradient-bg-third)",

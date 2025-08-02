@@ -9,7 +9,7 @@ import {
 } from "../../utils/CustomUi";
 import { icons } from "../../utils/icons";
 
-const RegisterNewGhaats = () => {
+const RegisterNewGhats = () => {
   const handleImageUpload = (uploadData) => {
     console.log("Image uploaded:", uploadData);
 
@@ -32,7 +32,7 @@ const RegisterNewGhaats = () => {
       <CustomHeading4
         title={"Register New River Port"}
         subtitle={
-          "Document and register a new ghaat with precise location data and visual proof"
+          "Document and register a new ghat with precise location data and visual proof"
         }
         icon={
           <icons.MdOutlineWaves
@@ -47,10 +47,10 @@ const RegisterNewGhaats = () => {
       />
       <form action="">
         <UploadImage
-          title="Upload Ghaat Geotagged Photo"
+          title="Upload Ghat Geotagged Photo"
           subtitle={
             <p style={{ fontsize: "14px", color: "#1c4ed8", padding: "8px 0" }}>
-              Capture or upload photo of the ghaat with{" "}
+              Capture or upload photo of the ghat with{" "}
               <span style={{ fontWeight: "bold" }}>GPS coordinates</span> (from
               phone camera).
             </p>
@@ -68,9 +68,9 @@ const RegisterNewGhaats = () => {
         />
         <div className="form-group">
           <InputBox
-            label={"Ghaat Name"}
+            label={"Ghat Name"}
             type={"text"}
-            placeholder={"Enter ghaat name"}
+            placeholder={"Enter ghat name"}
             required={"required"}
             focusColor={"#4d87f7"}
           />
@@ -138,12 +138,12 @@ const RegisterNewGhaats = () => {
         />
         <TextAreaBox
           label={"Additional Information"}
-          placeholder={"Any additional information about the ghaat"}
+          placeholder={"Any additional information about the ghat"}
           required={null}
           focusColor={"#4d87f7"}
         />
         <CustomButton
-          label={"Register Ghaat"}
+          label={"Register Ghat"}
           onClick={() => {}}
           icon={
             <icons.MdOutlineWaves style={{ width: "18px", height: "18px" }} />
@@ -157,4 +157,4 @@ const RegisterNewGhaats = () => {
   );
 };
 
-export default RegisterNewGhaats;
+export default RegisterNewGhats;

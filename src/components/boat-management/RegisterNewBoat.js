@@ -144,10 +144,10 @@ const RegisterNewBoat = () => {
           />
 
           <InputBox
-            label={"Assigned Ghaat"}
+            label={"Assigned Ghat"}
             type={"text"}
             required={"required"}
-            placeholder={"Enter ghaat name"}
+            placeholder={"Enter ghat name"}
             focusColor={"#13ba82"}
           />
 

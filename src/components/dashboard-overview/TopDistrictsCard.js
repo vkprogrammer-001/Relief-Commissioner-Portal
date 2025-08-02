@@ -11,35 +11,35 @@ const TopDistrictsCard = () => {
     {
       districts: "Lucknow",
       boats: 45,
-      ghaats: 8,
+      ghats: 8,
       percentage: 92,
       color: "#12b981",
     },
     {
       districts: "Varanasi",
       boats: 38,
-      ghaats: 12,
+      ghats: 12,
       percentage: 88,
       color: "#3c82f6",
     },
     {
       districts: "Allahabad",
       boats: 32,
-      ghaats: 6,
+      ghats: 6,
       percentage: 85,
       color: "#a855f7",
     },
     {
       districts: "Agra",
       boats: 28,
-      ghaats: 4,
+      ghats: 4,
       percentage: 78,
       color: "#f97315",
     },
     {
       districts: "Kanpur",
       boats: 35,
-      ghaats: 7,
+      ghats: 7,
       percentage: 82,
       color: "#ec4899",
     },
@@ -85,7 +85,7 @@ const TopDistrictsCard = () => {
                 gap: "5px",
               }}
             >
-              <icons.MdOutlineWaves /> {item.ghaats} ghats
+              <icons.MdOutlineWaves /> {item.ghats} ghats
             </div>
           </div>
         </div>

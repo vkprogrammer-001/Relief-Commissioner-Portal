@@ -7,7 +7,7 @@ const DistrictMonitoringDashboard = () => {
         title={"District Monitoring Dashboard"}
         titleSize={"var(--text-2xl)"}
         subtitle={
-          "Monitor boat and ghaat registration progress across all 75 districts"
+          "Monitor boat and ghat registration progress across all 75 districts"
         }
       />
       <div>

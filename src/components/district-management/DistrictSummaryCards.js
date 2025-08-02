@@ -15,7 +15,7 @@ const DistrictSummaryCards = () => {
       color: "#22c55d",
     },
     {
-      title: "Total Ghaats",
+      title: "Total Ghats",
       value: "83",
       info: "River ports operational",
       color: "#a855f7",

@@ -14,7 +14,7 @@ const RecordDistribution = () => {
       <CustomHeading4
         title={"Record Life Jacket Distribution"}
         subtitle={
-          "Document and track life jacket distribution to rescue boats and ghaats"
+          "Document and track life jacket distribution to rescue boats and ghats"
         }
         icon={
           <icons.LuShield
@@ -37,9 +37,9 @@ const RecordDistribution = () => {
           />
 
           <InputBox
-            label={"Ghaat Name"}
+            label={"Ghat Name"}
             type={"text"}
-            placeholder={"Enter ghaat name"}
+            placeholder={"Enter ghat name"}
             required={"required"}
             focusColor={"#f97318"}
           />
@@ -95,7 +95,7 @@ const RecordDistribution = () => {
           focusColor={"#f97318"}
         />
         <CustomButton
-          label={"Register Ghaat"}
+          label={"Register Ghat"}
           onClick={() => {}}
           icon={<icons.LuShield style={{ width: "18px", height: "18px" }} />}
           color={"#ffffff"}

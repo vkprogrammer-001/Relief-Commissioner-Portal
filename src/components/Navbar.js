@@ -11,7 +11,7 @@ const Navbar = () => {
     const menuItems = useMemo(() => [
         { id: 'dashboard', icon: icons.FaRegChartBar(), label: 'Dashboard', path: '/', color: 'var(--gradient-bg-first)' },
         { id: 'boats', icon: icons.IoBoatOutline(), label: 'Boats', path: '/boats', color: 'var(--gradient-bg-second)' },
-        { id: 'ghaats', icon: icons.MdOutlineWaves(), label: 'Ghaats', path: '/ghaats', color: 'var(--gradient-bg-third)' },
+        { id: 'ghats', icon: icons.MdOutlineWaves(), label: 'Ghats', path: '/ghats', color: 'var(--gradient-bg-third)' },
         { id: 'districts', icon: icons.IoLocationOutline(), label: 'Districts', path: '/districts', color: 'var(--gradient-bg-fourth)' },
         { id: 'lifejackets', icon: icons.LuShield(), label: 'Life Jackets', path: '/life-jackets', color: 'var(--gradient-bg-fifth)' },
         { id: 'inspection', icon: icons.BsClipboardCheck(), label: 'Inspection', path: '/inspection', color: 'var(--gradient-bg-sixth)' }

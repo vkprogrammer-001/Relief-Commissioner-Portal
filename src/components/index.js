@@ -8,9 +8,9 @@ export { default as TopDistrictsCard } from "./dashboard-overview/TopDistrictsCa
 export { default as RegisterNewBoat } from "./boat-management/RegisterNewBoat";
 export { default as RegisteredBoats} from "./boat-management/RegisteredBoats";
 
-// ghaat management components
-export { default as RegisterNewGhaats } from "./ghaat-management/RegisterNewGhaats";
-export { default as RegisteredGhaats } from "./ghaat-management/RegisteredGhaats";
+// ghat management components
+export { default as RegisterNewGhats } from "./ghat-management/RegisterNewGhats";
+export { default as RegisteredGhats } from "./ghat-management/RegisteredGhats";
 
 // district management components
 export { default as DistrictSummaryCards } from "./district-management/DistrictSummaryCards";

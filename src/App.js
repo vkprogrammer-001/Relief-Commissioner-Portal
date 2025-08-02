@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Boats from "./pages/Boats";
 import Dashboard from "./pages/Dashboard";
 import Districts from "./pages/Districts";
-import Ghaats from "./pages/Ghaats";
+import Ghats from "./pages/Ghats";
 import Inspection from "./pages/Inspection";
 import LifeJackets from "./pages/LifeJackets";
 import "./styles/global.css";
@@ -27,7 +27,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               {/* Routes for specific application sections. */}
               <Route path="/boats" element={<Boats />} />
-              <Route path="/ghaats" element={<Ghaats />} />
+              <Route path="/ghats" element={<Ghats />} />
               <Route path="/districts" element={<Districts />} />
               <Route path="/life-jackets" element={<LifeJackets />} />
               <Route path="/inspection" element={<Inspection />} />

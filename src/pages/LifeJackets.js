@@ -50,7 +50,7 @@ const LifeJackets = () => {
       <CustomHeading1
         title={"Life Jacket Distribution"}
         subtitle={
-          "Manage and track life jacket distribution across all rescue boats and ghaats"
+          "Manage and track life jacket distribution across all rescue boats and ghats"
         }
         icon={
           <icons.MdOutlineWaves
