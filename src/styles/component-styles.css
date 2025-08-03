@@ -183,7 +183,7 @@ button:hover {
   padding: 10px 0;
 }
 
-.dashboard-content {
+.dashboard-content, .districts-bottom-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 35px;
@@ -289,6 +289,25 @@ button:hover {
   gap: 20px;
   margin-bottom: 32px;
 
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-bar .input-box {
+  flex: 5;
+}
+
+.filter-bar .dropdown-menu {
+  flex: 1;
+}
+
+.districts-bottom-section {
+  gap: 5px;
 }
 
 @media (max-width: 1280px) {

@@ -496,7 +496,7 @@ const InputBox = ({
   required,
   focusColor,
   height,
-  borderRadius,
+  borderRadius = 8,
   min,
   max,
   value,
@@ -561,7 +561,7 @@ const InputBox = ({
           min={inputProps.min || (type === "number" ? "0" : undefined)}
           max={inputProps.max}
           value={value}
-          onChange={onChange}
+          onChange={(e) => onChange(e.target.value)}
           style={{
             "--focus-color": focusColor || "#e2e8f0",
             height,
@@ -601,7 +601,7 @@ const DropDownMenu = ({
   required,
   focusColor,
   height,
-  borderRadius,
+  borderRadius = 8,
   placeholder,
 }) => {
   return (
@@ -624,9 +624,11 @@ const DropDownMenu = ({
             borderRadius: `${borderRadius}px`,
           }}
         >
-          <option value="" disabled>
-            {placeholder || `Select ${label}`}
-          </option>
+          {placeholder && (
+            <option value="" disabled>
+              {placeholder || `Select ${label}`}
+            </option>
+          )}
           {options.map((option) => (
             <option key={option} value={option}>
               {option}
@@ -750,9 +752,7 @@ const CustomTable = ({
                         color: "#6b7280",
                       }}
                     >
-                      {rowData[heading] ||
-                        rowData[heading.toLowerCase()] ||
-                        "-"}
+                      {rowData[heading.replace(/\s+/g, "").toLowerCase()] || "-"}
                     </td>
                   ))}
             </tr>

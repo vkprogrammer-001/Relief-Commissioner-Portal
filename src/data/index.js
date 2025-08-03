@@ -1,5 +1,5 @@
 // Central export file for all static data
-export { upDistricts, districtsByRegion } from './districts';
+export { upDistricts, districtsByRegion, districtCompletionData } from './districts';
 export {
   boatTypes,
   boatCapacities,

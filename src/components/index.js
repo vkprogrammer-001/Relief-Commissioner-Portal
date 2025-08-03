@@ -15,6 +15,8 @@ export { default as RegisteredGhats } from "./ghat-management/RegisteredGhats";
 // district management components
 export { default as DistrictSummaryCards } from "./district-management/DistrictSummaryCards";
 export { default as DistrictMonitoringDashboard } from "./district-management/DistrictMonitoringDashboard";
+export { default as TopPerformingDistricts } from "./district-management/TopPerformingDistricts";
+export { default as LowPerformingDistricts } from "./district-management/LowPerformingDistricts";
 
 // life jacket distribution components
 export { default as RecordDistribution } from "./life-jacket-distribution/RecordDistribution";
