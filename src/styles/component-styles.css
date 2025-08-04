@@ -183,7 +183,7 @@ button:hover {
   padding: 10px 0;
 }
 
-.dashboard-content, .districts-bottom-section {
+.dashboard-content, .districts-bottom-section, .inspection-schedule {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 35px;
@@ -306,7 +306,7 @@ button:hover {
   flex: 1;
 }
 
-.districts-bottom-section {
+.districts-bottom-section, .inspection-schedule {
   gap: 5px;
 }
 
