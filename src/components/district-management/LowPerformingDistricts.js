@@ -1,5 +1,5 @@
-import { CustomHeading2 } from "../../utils/CustomUi";
 import { districtCompletionData } from "../../data";
+import { CustomHeading2 } from "../../utils/CustomUi";
 
 const LowPerformingDistricts = () => {
   const lowPerformingDistricts = districtCompletionData.filter((item) => {
@@ -7,7 +7,7 @@ const LowPerformingDistricts = () => {
   });
 
   return (
-    <div className="tab-content box-style1">
+    <div className="tab-content border-style-light">
       <CustomHeading2
         title={"Needs Attention"}
         titleSize={"var(--text-2xl)"}

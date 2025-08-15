@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { districtCompletionData } from "../../data";
 import {
-  CustomHeading2,
-  CustomTable,
-  DropDownMenu,
-  InputBox,
+    CustomHeading2,
+    CustomTable,
+    DropDownMenu,
+    InputBox,
 } from "../../utils/CustomUi";
 
 const DistrictMonitoringDashboard = () => {
@@ -64,7 +64,7 @@ const DistrictMonitoringDashboard = () => {
   };
 
   return (
-    <div className="tab-content box-style1">
+    <div className="tab-content border-style-light">
       <CustomHeading2
         title={"District Monitoring Dashboard"}
         titleSize={"var(--text-2xl)"}

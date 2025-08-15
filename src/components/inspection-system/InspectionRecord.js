@@ -1,8 +1,8 @@
 import {
-  CustomHeading2,
-  Tag,
-  CustomTable,
-  CustomButton,
+    CustomButton,
+    CustomHeading2,
+    CustomTable,
+    Tag,
 } from "../../utils/CustomUi.js";
 
 const InspectionRecord = () => {
@@ -16,7 +16,7 @@ const InspectionRecord = () => {
     />
   );
   return (
-    <div className="tab-content box-style1">
+    <div className="tab-content border-style-light">
       <CustomHeading2
         title={"Inspection Records"}
         titleSize={"var(--text-2xl)"}

@@ -1,22 +1,22 @@
 import {
-  CustomHeading2,
-  InputBox,
-  DropDownMenu,
-  TextAreaBox,
-  CustomButton,
+    CustomButton,
+    CustomHeading2,
+    DropDownMenu,
+    InputBox,
+    TextAreaBox,
 } from "../../utils/CustomUi.js";
 
 import {
-  inspectionChecklist,
-  hullCondition,
-  engineCondition,
-  safetyEquipment,
-  overallCondition,
+    engineCondition,
+    hullCondition,
+    inspectionChecklist,
+    overallCondition,
+    safetyEquipment,
 } from "../../data/inspectionTypes.js";
 
 const ConductInspection = () => {
   return (
-    <div className="tab-content box-style1">
+    <div className="tab-content border-style-light">
       <CustomHeading2
         title={"Annual Boat Inspection Form"}
         titleSize={"var(--text-2xl)"}

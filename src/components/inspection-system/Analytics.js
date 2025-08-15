@@ -1,7 +1,7 @@
 import {
-  CustomHeading2,
-  ProgressIndicator,
-  SummaryCard,
+    CustomHeading2,
+    ProgressIndicator,
+    SummaryCard,
 } from "../../utils/CustomUi";
 
 const Analytics = () => {
@@ -68,7 +68,7 @@ const Analytics = () => {
           />
         ))}
       </div>
-      <div className="tab-content box-style1">
+      <div className="tab-content border-style-light">
         <CustomHeading2
           title={"Inspection Status Overview"}
           subtitle={"Current year inspection completion status"}

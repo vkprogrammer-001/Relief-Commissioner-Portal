@@ -18,6 +18,7 @@ const Dashboard = () => {
           }
           icon={
             <icons.TbActivityHeartbeat
+              className="dashboard-icon"
               style={{
                 width: "32px",
                 height: "32px",
@@ -28,12 +29,26 @@ const Dashboard = () => {
           textColor={"linear-gradient(to right, #2562ea, #4e47e6)"}
         />
       </div>
-      <DashboardCard />
-      <div className="dashboard-content">
-        <RecentActivityCard />
-        <TopDistrictsCard />
+      
+      {/* Dashboard Cards */}
+      <div className="dashboard-cards-section">
+        <DashboardCard />
       </div>
-      <SystemAlertCard />
+      
+      {/* Main Content Grid */}
+      <div className="dashboard-content">
+        <div className="dashboard-content-left">
+          <RecentActivityCard />
+        </div>
+        <div className="dashboard-content-right">
+          <TopDistrictsCard />
+        </div>
+      </div>
+      
+      {/* System Alerts */}
+      <div className="dashboard-alerts-section">
+        <SystemAlertCard />
+      </div>
     </div>
   );
 };

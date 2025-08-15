@@ -30,7 +30,7 @@ const InspectionSchedule = () => {
   ];
   return (
     <div className="inspection-schedule">
-      <div className="upcoming-inspections tab-content box-style1">
+      <div className="upcoming-inspections tab-content border-style-light">
         <CustomHeading2
           title={"Upcoming Inspections"}
           subtitle={"Boats due for annual inspection"}
@@ -69,11 +69,7 @@ const InspectionSchedule = () => {
           <div>No data available</div>
         )}
       </div>
-      <div className="inspection calendar tab-content box-style1">
-        {/* <CustomHeading2
-          title={"Inspection Calendar"}
-          subtitle={"Monthly inspection schedule overview"}
-        /> */}
+      <div className="inspection calendar tab-content border-style-light">
         <InspectionCalendar />
       </div>
     </div>
